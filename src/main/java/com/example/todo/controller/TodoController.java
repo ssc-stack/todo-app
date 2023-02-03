@@ -42,14 +42,16 @@ public class TodoController {
         return todoService.findAll();
     }
 
+    //http://localhost:8080/api/v1/todo-app/update-todo/id/4
     //@RequestMapping(value="url",method=HttpRequest.PUT)
-    @PutMapping
-    public void updateTodo(@PathVariable int id, @RequestBody Todo todo) {
-
+    @PutMapping("update-todo/id/{id}")
+    public void updateTodo(@PathVariable int id,@RequestBody Todo todo) {
+        todoService.updateTodo(id,todo);
     }
 
-    @DeleteMapping
+    //http://localhost:8080/api/v1/todo-app/delete-todo/id/3
+    @DeleteMapping("delete-todo/id/{id}")
     public void deleteTodo(@PathVariable int id) {
-
+        todoService.deleteTodo(id);
     }
 }

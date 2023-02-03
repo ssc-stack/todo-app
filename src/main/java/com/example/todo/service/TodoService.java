@@ -36,6 +36,22 @@ public class TodoService {
     public void addTodo(Todo todo) {
         todos.add(todo);
     }
+
+    public void deleteTodo(int id) {
+        Predicate<? super Todo> predicate = todo -> todo.getId() == id;
+        todos.removeIf(predicate);
+    }
+
+    public void updateTodo(int id,Todo newTodo) {
+        //step 1: find todo to be update
+        //Step 2: update todo
+
+        Todo todo=findById(id);// step 1
+
+        todo.setId(newTodo.getId());
+        todo.setTitle(newTodo.getTitle());
+        todo.setStatus(newTodo.getStatus());
+    }
 }
 
 
