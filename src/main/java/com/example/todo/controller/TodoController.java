@@ -28,6 +28,7 @@ public class TodoController {
 
     }
 
+    //http://localhost:8080/api/v1/todo-app/find-todo/id/2
     @GetMapping("/find-todo/id/{id}")
     public Todo findTodoById(@PathVariable int id) {
         return todoService.findById(id);
