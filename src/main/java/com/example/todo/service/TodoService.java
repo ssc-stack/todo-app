@@ -32,6 +32,10 @@ public class TodoService {
         Todo todo = todos.stream().filter(predicate).findFirst().get();
         return todo;
     }
+
+    public void addTodo(Todo todo) {
+        todos.add(todo);
+    }
 }
 
 

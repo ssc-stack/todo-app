@@ -23,13 +23,15 @@ public class TodoController {
         this.todoService=todoService;
     }
 
-    @PostMapping
+    //http://localhost:8080/api/v1/todo-app/add-todo
+    @PostMapping("/add-todo")
     public void addTodo(@RequestBody Todo todo) {
-
+        todoService.addTodo(todo);
     }
 
     //http://localhost:8080/api/v1/todo-app/find-todo/id/2
     @GetMapping("/find-todo/id/{id}")
+    //@RequestMapping(value="/find-todo/id/{id}")
     public Todo findTodoById(@PathVariable int id) {
         return todoService.findById(id);
     }
