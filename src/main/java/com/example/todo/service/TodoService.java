@@ -26,6 +26,12 @@ public class TodoService {
     public List<Todo> findAll() { // Business Logic
         return todos;
     }
+
+    public Todo findById(int id) { // business LOgic
+        Predicate<? super Todo> predicate = todo -> todo.getId() == id;
+        Todo todo = todos.stream().filter(predicate).findFirst().get();
+        return todo;
+    }
 }
 
 
