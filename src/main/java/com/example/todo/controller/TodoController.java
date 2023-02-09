@@ -1,11 +1,9 @@
 package com.example.todo.controller;
 
 import com.example.todo.model.Todo;
+import com.example.todo.service.ITodoService;
 import com.example.todo.service.TodoService;
-import jakarta.websocket.server.PathParam;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.*;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
@@ -17,11 +15,12 @@ import java.util.List;
 public class TodoController {
 
 
-    private final TodoService todoService;
 
-    public TodoController(TodoService todoService) {
-        this.todoService=todoService;
-    }
+     // Used to inject Dependency
+    @Autowired
+    private ITodoService todoService;
+
+
 
     //http://localhost:8080/api/v1/todo-app/add-todo
     @PostMapping("/add-todo")
@@ -54,4 +53,5 @@ public class TodoController {
     public void deleteTodo(@PathVariable int id) {
         todoService.deleteTodo(id);
     }
+
 }
