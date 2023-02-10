@@ -43,8 +43,7 @@ public class TodoService implements  ITodoService {
 
     @Override
     public void deleteTodo(int id) {
-        Predicate<? super Todo> predicate = todo -> todo.getId() == id;
-        todos.removeIf(predicate);
+        todos.removeIf(todo -> todo.getId() == id);
     }
 
     @Override
