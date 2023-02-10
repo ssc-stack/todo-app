@@ -1,4 +1,5 @@
-insert into todo (status,title) values(false,'test');
-insert into todo (status,title) values(false,'test1');
-insert into todo (status,title) values(false,'test2');
-insert into todo (status,title) values(false,'test3');
+INSERT INTO todo (title, status) VALUES ('Learn Spring Boot', false);
+INSERT INTO todo (title, status) VALUES ('Visit Grocery Store', false);
+INSERT INTO todo (title, status) VALUES ('Learn AWS', false);
+INSERT INTO todo (title, status) VALUES ('Swimming', false);
+INSERT INTO todo (title, status) VALUES ('Yoga', false);
